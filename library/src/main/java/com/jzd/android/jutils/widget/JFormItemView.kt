@@ -1,5 +1,6 @@
 package com.jzd.android.jutils.widget
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.util.AttributeSet
@@ -13,13 +14,10 @@ import com.jzd.android.jutils.R
 /**
  * Created by Jzd on 2018/7/16.
  * 表单列表项
- * // TODO v21构造方法LinearLayout(context, attrs, defStyleAttr，defStyleRes)
  */
-class JFormItemView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : LinearLayout(context, attrs, defStyleAttr)
-{
-    //constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : this(context, attrs, defStyleAttr, 0)
-    constructor(context: Context?, attrs: AttributeSet?) : this(context, attrs, 0)
+class JFormItemView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : LinearLayout(context, attrs, defStyleAttr) {
 
+    constructor(context: Context?, attrs: AttributeSet?) : this(context, attrs, 0)
     constructor(context: Context?) : this(context, null)
 
     lateinit var mLayoutRoot: LinearLayout
@@ -29,11 +27,9 @@ class JFormItemView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) 
     lateinit var mTvItemRight: TextView
     lateinit var mDivider: View
 
-    init
-    {
+    init {
         val view = LayoutInflater.from(context).inflate(R.layout.layout_j_form_item_view, this, true)
-        if (context != null && attrs != null)
-        {
+        if (context != null && attrs != null) {
             val attributeSet = context.obtainStyledAttributes(attrs, R.styleable.JFormItemView)
 
             // 左侧TextView
@@ -53,6 +49,12 @@ class JFormItemView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) 
             mTvItemLeft.setPadding(leftPaddingStart, leftPaddingTop, leftPaddingEnd, leftPaddingBottom)
             val leftText = attributeSet.getString(R.styleable.JFormItemView_left_text)
             mTvItemLeft.text = leftText
+            val leftVisibility = attributeSet.getInt(R.styleable.JFormItemView_left_visibility, 1)
+            when (leftVisibility) {
+                1 -> mTvItemLeft.visibility = View.VISIBLE
+                2 -> mTvItemLeft.visibility = View.GONE
+                3 -> mTvItemLeft.visibility = View.INVISIBLE
+            }
 
             // 中间TextView
             mTvItemContext = view.findViewById(R.id.mTvItemContext)
@@ -81,14 +83,11 @@ class JFormItemView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) 
             val rightPaddingEnd = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_right_padding_end, 0)
             val rightPaddingBottom = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_right_padding_bottom, 0)
             mTvItemRight.setPadding(rightPaddingStart, rightPaddingTop, rightPaddingEnd, rightPaddingBottom)
-            val rightVisible = attributeSet.getBoolean(R.styleable.JFormItemView_right_visible, false)
-            if (rightVisible)
-            {
-                mTvItemRight.visibility = View.VISIBLE
-            }
-            else
-            {
-                mTvItemRight.visibility = View.GONE
+            val rightVisibility = attributeSet.getInt(R.styleable.JFormItemView_right_visibility, 1)
+            when (rightVisibility) {
+                1 -> mTvItemRight.visibility = View.VISIBLE
+                2 -> mTvItemRight.visibility = View.GONE
+                3 -> mTvItemRight.visibility = View.INVISIBLE
             }
             val rightTextSize = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_right_text_size, 15)
             mTvItemRight.setTextSize(TypedValue.COMPLEX_UNIT_PX, rightTextSize.toFloat())
@@ -111,6 +110,12 @@ class JFormItemView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) 
             layoutParams.setMargins(dividerPaddingStart, dividerPaddingTop, dividerPaddingEnd, dividerPaddingBottom)
             val dividerHeight = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_divider_height, 1)
             mDivider.layoutParams.height = dividerHeight
+            val dividerVisibility = attributeSet.getInt(R.styleable.JFormItemView_divider_visibility, 1)
+            when (dividerVisibility) {
+                1 -> mDivider.visibility = View.VISIBLE
+                2 -> mDivider.visibility = View.GONE
+                3 -> mDivider.visibility = View.INVISIBLE
+            }
 
 
             // 整体
@@ -120,8 +125,7 @@ class JFormItemView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) 
             var itemPaddingTop = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_item_padding_top, 0)
             var itemPaddingEnd = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_item_padding_end, 0)
             var itemPaddingBottom = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_item_padding_bottom, 0)
-            if (itemPadding != 0)
-            {
+            if (itemPadding != 0) {
                 itemPaddingStart = itemPadding
                 itemPaddingTop = itemPadding
                 itemPaddingEnd = itemPadding
@@ -134,7 +138,6 @@ class JFormItemView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) 
             attributeSet.recycle()
         }
     }
-
 
 
 }

@@ -2,6 +2,7 @@ package com.jzd.jutils.app.module.widget
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.jzd.android.jutils.widget.JFormItemView
 import com.jzd.jutils.app.R
 
 class WidgetWatcherActivity : AppCompatActivity()

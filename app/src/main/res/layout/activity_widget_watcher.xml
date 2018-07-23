@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,25 +10,25 @@
         android:id="@+id/mItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:content_hint="JJJJJ"
+        app:content_hint="帐号"
         app:content_text_color="@color/colorPrimary"
         app:content_text_color_hint="@android:color/holo_green_dark"
         app:content_text_size="@dimen/jutils_dimen_sub_title"
         app:divider_color="@color/colorAccent"
-        app:item_padding="30dp"
-        app:item_padding_end="12dp"
-        app:item_padding_start="12dp"
-        app:item_padding_top="30dp"
+        app:right_visibility="invisible"
+        app:divider_padding_top="5dp"
+        app:divider_visibility="gone"
+        app:item_padding="12dp"
         app:left_icon="@drawable/ic_user"
         app:left_icon_padding="5dp"
         app:left_text="姓名"
         app:left_text_color="#ff00"
         app:left_text_size="10sp"
+        app:left_visibility="gone"
         app:right_icon="@drawable/ic_right_raw"
         app:right_icon_padding="5dp"
         app:right_text="测试"
         app:right_text_color="@android:color/holo_green_light"
-        app:right_text_size="12sp"
-        app:right_visible="false"/>
+        app:right_text_size="12sp" />
 
 </android.support.constraint.ConstraintLayout>
