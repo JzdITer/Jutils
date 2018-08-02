@@ -1,6 +1,5 @@
 package com.jzd.android.jutils.widget
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.util.AttributeSet
@@ -10,15 +9,20 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.jzd.android.jutils.R
+import com.jzd.android.jutils.core.interf.JMapInter
 
 /**
- * Created by Jzd on 2018/7/16.
- * 表单列表项
+ * 表单输入控件，包含左侧TextView,内容TextView,右侧TextView和分割线
+ *
+ * @author jzd
+ * @date   2018/8/2 23:06
+ * @email  jzd_dev1@163.com
+ * @since  v1.0
  */
-class JFormItemView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : LinearLayout(context, attrs, defStyleAttr) {
+class JFormItemView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : LinearLayout(context, attrs, defStyleAttr) {
 
-    constructor(context: Context?, attrs: AttributeSet?) : this(context, attrs, 0)
-    constructor(context: Context?) : this(context, null)
+    constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
+    constructor(context: Context) : this(context, null)
 
     lateinit var mLayoutRoot: LinearLayout
     lateinit var mLayoutContent: LinearLayout
@@ -27,9 +31,11 @@ class JFormItemView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) 
     lateinit var mTvItemRight: TextView
     lateinit var mDivider: View
 
+    private var mJMapInter: JMapInter? = null
+
     init {
         val view = LayoutInflater.from(context).inflate(R.layout.layout_j_form_item_view, this, true)
-        if (context != null && attrs != null) {
+        if (attrs != null) {
             val attributeSet = context.obtainStyledAttributes(attrs, R.styleable.JFormItemView)
 
             // 左侧TextView
@@ -83,7 +89,7 @@ class JFormItemView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) 
             val rightPaddingEnd = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_right_padding_end, 0)
             val rightPaddingBottom = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_right_padding_bottom, 0)
             mTvItemRight.setPadding(rightPaddingStart, rightPaddingTop, rightPaddingEnd, rightPaddingBottom)
-            val rightVisibility = attributeSet.getInt(R.styleable.JFormItemView_right_visibility, 1)
+            val rightVisibility = attributeSet.getInt(R.styleable.JFormItemView_right_visibility, 2)
             when (rightVisibility) {
                 1 -> mTvItemRight.visibility = View.VISIBLE
                 2 -> mTvItemRight.visibility = View.GONE
@@ -103,7 +109,7 @@ class JFormItemView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) 
             val dividerColor = attributeSet.getColor(R.styleable.JFormItemView_divider_color, Color.BLACK)
             mDivider.setBackgroundColor(dividerColor)
             val dividerPaddingStart = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_divider_padding_start, 0)
-            val dividerPaddingTop = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_divider_padding_top, 0)
+            val dividerPaddingTop = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_divider_padding_top, 3)
             val dividerPaddingEnd = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_divider_padding_end, 0)
             val dividerPaddingBottom = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_divider_padding_bottom, 0)
             val layoutParams = mDivider.layoutParams as LinearLayout.LayoutParams
@@ -133,11 +139,24 @@ class JFormItemView(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) 
             }
             mLayoutRoot.setPadding(itemPaddingStart, itemPaddingTop, itemPaddingEnd, itemPaddingBottom)
 
-
             // 回收资源
             attributeSet.recycle()
         }
     }
 
+    /**
+     * 为控件绑定数据
+     */
+    fun setData(map: JMapInter?) {
+        this.mJMapInter = map
+        mTvItemContext.text = mJMapInter?.value().toString()
+    }
+
+    /**
+     * 获取该控件上的数据
+     */
+    fun getData(): JMapInter? {
+        return this.mJMapInter
+    }
 
 }
