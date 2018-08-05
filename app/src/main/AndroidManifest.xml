@@ -19,6 +19,8 @@
         <activity android:name=".module.widget.WidgetWatcherActivity"/>
         <activity android:name=".ui.Main2Activity">
         </activity>
+        <activity android:name=".module.util.ui.UtilsWatcherActivity">
+        </activity>
     </application>
 
 </manifest>

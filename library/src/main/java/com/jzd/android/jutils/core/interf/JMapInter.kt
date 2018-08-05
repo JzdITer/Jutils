@@ -13,15 +13,15 @@ interface JMapInter {
     /**
      * 返回Key
      */
-    fun key():Any
+    fun key(): Any
 
     /**
      * 返回Value
      */
-    fun value():Any
+    fun value(): Any
 
     /**
      * 返回本身
      */
-    fun obj():Any?
+    fun obj(): Any?
 }

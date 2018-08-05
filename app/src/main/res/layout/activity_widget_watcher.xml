@@ -1,34 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.jzd.jutils.app.module.widget.WidgetWatcherActivity">
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             tools:context="com.jzd.jutils.app.module.widget.WidgetWatcherActivity">
 
     <com.jzd.android.jutils.widget.JFormItemView
         android:id="@+id/mItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:content_hint="帐号"
-        app:content_text_color="@color/colorPrimary"
-        app:content_text_color_hint="@android:color/holo_green_dark"
-        app:content_text_size="@dimen/jutils_dimen_sub_title"
-        app:divider_color="@color/colorAccent"
-        app:right_visibility="invisible"
-        app:divider_padding_top="5dp"
-        app:divider_visibility="gone"
-        app:item_padding="12dp"
-        app:left_icon="@drawable/ic_user"
-        app:left_icon_padding="5dp"
-        app:left_text="姓名"
-        app:left_text_color="#ff00"
-        app:left_text_size="10sp"
-        app:left_visibility="gone"
-        app:right_icon="@drawable/ic_right_raw"
-        app:right_icon_padding="5dp"
-        app:right_text="测试"
-        app:right_text_color="@android:color/holo_green_light"
-        app:right_text_size="12sp" />
+        />
 
 </android.support.constraint.ConstraintLayout>

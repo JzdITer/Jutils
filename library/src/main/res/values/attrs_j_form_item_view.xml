@@ -5,7 +5,7 @@
         <attr name="left_text" format="string" />
         <attr name="left_icon" format="reference" />
         <attr name="left_text_size" format="dimension" />
-        <attr name="left_text_color" format="color" />
+        <attr name="left_text_color" format="color|reference" />
         <attr name="left_icon_padding" format="dimension" />
         <attr name="left_padding_start" format="dimension" />
         <attr name="left_padding_top" format="dimension" />
