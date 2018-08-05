@@ -7,7 +7,7 @@ import android.util.Log
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.jzd.android.jutils.app.adapter.MainAdapter
 import com.jzd.android.jutils.app.bean.ModuleBean
-import com.jzd.android.jutils.utils.JMetricsUtil
+import com.jzd.android.jutils.utils.JMetrics
 import com.jzd.jutils.app.R
 import kotlinx.android.synthetic.main.activity_utils_watcher.*
 
@@ -28,7 +28,7 @@ class UtilsWatcherActivity : AppCompatActivity() {
         mAdapter.setOnItemClickListener({ adapter, _, position ->
             val item = adapter.getItem(position) as ModuleBean
             if (item.title == "JMetricsUtil") {
-                Log.d("tag", JMetricsUtil.getDensityDpi(context = this).toString())
+                Log.d("tag", JMetrics.getDensityDpi(context = this).toString())
             }
         })
     }

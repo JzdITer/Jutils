@@ -11,7 +11,7 @@ import android.util.DisplayMetrics
  * @email  jzd_dev1@163.com
  * @since  v1.0
  */
-class JMetricsUtil {
+class JMetrics {
     companion object {
         /**
          * 屏幕宽
