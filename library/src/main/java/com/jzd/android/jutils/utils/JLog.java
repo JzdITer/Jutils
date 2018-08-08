@@ -15,8 +15,16 @@ public class JLog {
     public static  boolean isDebug = true;
 
     /**
-     * 输出ERROR日志
+     * 设置debug模式
      *
+     * @param debug true:会输出日志 false:不会输入日志
+     */
+    public static void setDebug(boolean debug) {
+        isDebug = debug;
+    }
+
+    /**
+     * 输出ERROR日志
      */
     public static void e(String msg) {
         if(isDebug) {
@@ -26,7 +34,6 @@ public class JLog {
 
     /**
      * 输出INFO日志
-     *
      */
     public static void i(String msg) {
         if(isDebug) {
@@ -36,7 +43,6 @@ public class JLog {
 
     /**
      * 输出DEBUG日志
-     *
      */
     public static void d(String msg) {
         if(isDebug) {
@@ -46,7 +52,6 @@ public class JLog {
 
     /**
      * 输出VERBOSE日志
-     *
      */
     public static void v(String msg) {
         if(isDebug) {
@@ -56,7 +61,6 @@ public class JLog {
 
     /**
      * 输出WARN日志
-     *
      */
     public static void w(String msg) {
         if(isDebug) {
