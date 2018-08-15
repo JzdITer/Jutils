@@ -16,8 +16,6 @@ import com.jzd.android.jutils.utils.JMetrics
  * 表单输入控件，包含左侧TextView,内容TextView,右侧TextView和分割线
  *
  * @author jzd
- * @date   2018/8/2 23:06
- * @email  jzd_dev1@163.com
  * @since  v1.0
  */
 class JFormItemView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : LinearLayout(context, attrs, defStyleAttr) {

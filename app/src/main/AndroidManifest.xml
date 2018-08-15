@@ -21,6 +21,8 @@
         </activity>
         <activity android:name=".module.util.ui.UtilsWatcherActivity">
         </activity>
+        <activity android:name="com.jzd.jutils.app.module.util.toast.ToastWatcherActivity">
+        </activity>
     </application>
 
 </manifest>

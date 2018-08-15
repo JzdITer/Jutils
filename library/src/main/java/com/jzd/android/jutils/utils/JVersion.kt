@@ -6,8 +6,6 @@ import android.content.Context
  * 版本工具类
  *
  * @author jzd
- * @date   2018/8/5 22:20
- * @email  jzd_dev1@163.com
  * @since  v1.0
  */
 class JVersion {

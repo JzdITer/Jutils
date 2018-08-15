@@ -8,7 +8,7 @@ import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.jzd.android.jutils.app.adapter.MainAdapter
-import com.jzd.android.jutils.app.bean.ModuleBean
+import com.jzd.jutils.app.bean.ModuleBean
 import com.jzd.jutils.app.R
 import com.jzd.jutils.app.module.util.ui.UtilsWatcherActivity
 import com.jzd.jutils.app.module.widget.WidgetWatcherActivity
@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         data.add(ModuleBean("组件", WidgetWatcherActivity::class.java))
 
         data.add(ModuleBean("工具类", UtilsWatcherActivity::class.java))
+
         mAdapter.setNewData(data)
     }
 }

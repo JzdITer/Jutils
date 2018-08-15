@@ -2,23 +2,29 @@ package com.jzd.jutils.app.module.widget
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.jzd.android.jutils.core.bean.JMap
+import android.support.v7.widget.LinearLayoutManager
+import com.jzd.android.jutils.app.adapter.MainAdapter
 import com.jzd.jutils.app.R
-import com.jzd.jutils.app.bean.MapBean
+import com.jzd.jutils.app.bean.ModuleBean
 import kotlinx.android.synthetic.main.activity_widget_watcher.*
 
 class WidgetWatcherActivity : AppCompatActivity()
 {
 
+    private val mModules = arrayListOf<ModuleBean>();
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_widget_watcher)
 
+        mRvData.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-        val jMapInter = MapBean("1","我是1")
+        mModules.add(ModuleBean("JToast"))
 
-        mItem.setData(jMapInter)
-
+        val mAdapter = MainAdapter(R.layout.rv_item_main_module, mModules)
+        mRvData.adapter = mAdapter
+        mAdapter.setOnItemClickListener({ adapter, _, position ->
+            val item = adapter.getItem(position) as ModuleBean
+        })
     }
 }

@@ -3,8 +3,8 @@ package com.jzd.android.jutils.app.adapter
 import android.widget.TextView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
-import com.jzd.android.jutils.app.bean.ModuleBean
 import com.jzd.jutils.app.R
+import com.jzd.jutils.app.bean.ModuleBean
 
 /**
  * Created by Jzd on 2018/7/10.

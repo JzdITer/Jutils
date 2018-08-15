@@ -7,8 +7,6 @@ import android.util.DisplayMetrics
  * 度量相关工具类
  *
  * @author jzd
- * @date   2018/8/5 18:22
- * @email  jzd_dev1@163.com
  * @since  v1.0
  */
 class JMetrics {
