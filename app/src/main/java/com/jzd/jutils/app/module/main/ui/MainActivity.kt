@@ -1,4 +1,4 @@
-package com.jzd.jutils.app.ui
+package com.jzd.jutils.app.module.main.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,18 +7,20 @@ import android.support.v7.widget.GridLayoutManager
 import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
-import com.jzd.android.jutils.app.adapter.MainAdapter
-import com.jzd.jutils.app.bean.ModuleBean
+import com.jzd.android.jutils.app.adapter.ModuleAdapter
 import com.jzd.jutils.app.R
+import com.jzd.jutils.app.common.bean.ModuleBean
 import com.jzd.jutils.app.module.util.ui.UtilsWatcherActivity
 import com.jzd.jutils.app.module.widget.WidgetWatcherActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity()
+{
 
     private val mLayoutManager = GridLayoutManager(this, 2)
-    private val mAdapter = MainAdapter(R.layout.rv_item_main_module, null)
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private val mAdapter = ModuleAdapter(R.layout.rv_item_main_module, null)
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -29,7 +31,8 @@ class MainActivity : AppCompatActivity() {
 
         mAdapter.setOnItemClickListener({ baseQuickAdapter: BaseQuickAdapter<Any, BaseViewHolder>, _: View, i: Int ->
             val moduleBean = baseQuickAdapter.getItem(i) as ModuleBean
-            if (moduleBean.target != null) {
+            if (moduleBean.target != null)
+            {
                 startActivity(Intent(this, moduleBean.target))
             }
         })
@@ -37,7 +40,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun initData() {
+    private fun initData()
+    {
         val data = arrayListOf<ModuleBean>()
         data.add(ModuleBean("组件", WidgetWatcherActivity::class.java))
 

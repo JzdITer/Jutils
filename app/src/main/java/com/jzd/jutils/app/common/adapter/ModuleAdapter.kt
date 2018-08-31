@@ -4,12 +4,12 @@ import android.widget.TextView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.jzd.jutils.app.R
-import com.jzd.jutils.app.bean.ModuleBean
+import com.jzd.jutils.app.common.bean.ModuleBean
 
 /**
  * Created by Jzd on 2018/7/10.
  */
-class MainAdapter(layoutResId: Int, data: MutableList<ModuleBean>?) : BaseQuickAdapter<ModuleBean, BaseViewHolder>(layoutResId, data)
+class ModuleAdapter(layoutResId: Int, data: MutableList<ModuleBean>?) : BaseQuickAdapter<ModuleBean, BaseViewHolder>(layoutResId, data)
 {
     override fun convert(helper: BaseViewHolder?, item: ModuleBean?)
     {

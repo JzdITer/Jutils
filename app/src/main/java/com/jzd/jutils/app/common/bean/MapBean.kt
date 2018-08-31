@@ -1,4 +1,4 @@
-package com.jzd.jutils.app.bean
+package com.jzd.jutils.app.common.bean
 
 import com.jzd.android.jutils.core.bean.JMap
 

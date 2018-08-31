@@ -12,7 +12,8 @@ class ToastWatcherActivity : AppCompatActivity(), View.OnClickListener
     {
         when (v?.id)
         {
-            R.id.mBtn1 ->{
+            R.id.mBtn1 ->
+            {
             }
         }
     }

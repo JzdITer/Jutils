@@ -11,6 +11,7 @@ import android.widget.TextView
 import com.jzd.android.jutils.R
 import com.jzd.android.jutils.core.interf.JMapInter
 import com.jzd.android.jutils.utils.JMetrics
+import com.jzd.android.jutils.widget.utils.JWidgetUtil
 
 /**
  * 表单输入控件，包含左侧TextView,内容TextView,右侧TextView和分割线
@@ -18,7 +19,9 @@ import com.jzd.android.jutils.utils.JMetrics
  * @author jzd
  * @since  v1.0
  */
-class JFormItemView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : LinearLayout(context, attrs, defStyleAttr) {
+@SuppressWarnings("unused")
+class JFormItemView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : LinearLayout(context, attrs, defStyleAttr)
+{
 
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
     constructor(context: Context) : this(context, null)
@@ -32,16 +35,17 @@ class JFormItemView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
 
     private var mJMapInter: JMapInter? = null
 
-    init {
+    init
+    {
         val view = LayoutInflater.from(context).inflate(R.layout.layout_j_form_item_view, this, true)
-        if (attrs != null) {
+        if (attrs != null)
+        {
             val attributeSet = context.obtainStyledAttributes(attrs, R.styleable.JFormItemView)
 
             // 获取系统默认字体
-            val textView = TextView(context)
-            val defTextSize = textView.textSize
-            val defTextColor = textView.currentTextColor
-            val defHintTextColor = textView.currentHintTextColor
+            val defTextSize = JWidgetUtil(context).defTextSize()
+            val defTextColor = JWidgetUtil(context).defTextColor()
+            val defHintTextColor = JWidgetUtil(context).defTextColorHint()
 
             // 左侧TextView
             mTvItemLeft = view.findViewById(R.id.mTvItemLeft)
@@ -61,7 +65,8 @@ class JFormItemView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
             val leftText = attributeSet.getString(R.styleable.JFormItemView_left_text)
             mTvItemLeft.text = leftText
             val leftVisibility = attributeSet.getInt(R.styleable.JFormItemView_left_visibility, 1)
-            when (leftVisibility) {
+            when (leftVisibility)
+            {
                 1 -> mTvItemLeft.visibility = View.VISIBLE
                 2 -> mTvItemLeft.visibility = View.GONE
                 3 -> mTvItemLeft.visibility = View.INVISIBLE
@@ -95,7 +100,8 @@ class JFormItemView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
             val rightPaddingBottom = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_right_padding_bottom, 0)
             mTvItemRight.setPadding(rightPaddingStart, rightPaddingTop, rightPaddingEnd, rightPaddingBottom)
             val rightVisibility = attributeSet.getInt(R.styleable.JFormItemView_right_visibility, 2)
-            when (rightVisibility) {
+            when (rightVisibility)
+            {
                 1 -> mTvItemRight.visibility = View.VISIBLE
                 2 -> mTvItemRight.visibility = View.GONE
                 3 -> mTvItemRight.visibility = View.INVISIBLE
@@ -122,7 +128,8 @@ class JFormItemView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
             val dividerHeight = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_divider_height, 1)
             mDivider.layoutParams.height = dividerHeight
             val dividerVisibility = attributeSet.getInt(R.styleable.JFormItemView_divider_visibility, 1)
-            when (dividerVisibility) {
+            when (dividerVisibility)
+            {
                 1 -> mDivider.visibility = View.VISIBLE
                 2 -> mDivider.visibility = View.GONE
                 3 -> mDivider.visibility = View.INVISIBLE
@@ -136,7 +143,8 @@ class JFormItemView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
             var itemPaddingTop = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_item_padding_top, 0)
             var itemPaddingEnd = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_item_padding_end, 0)
             var itemPaddingBottom = attributeSet.getDimensionPixelSize(R.styleable.JFormItemView_item_padding_bottom, 0)
-            if (itemPadding != 0) {
+            if (itemPadding != 0)
+            {
                 itemPaddingStart = itemPadding
                 itemPaddingTop = itemPadding
                 itemPaddingEnd = itemPadding
@@ -152,7 +160,8 @@ class JFormItemView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
     /**
      * 为控件绑定数据
      */
-    fun setData(map: JMapInter?) {
+    fun setData(map: JMapInter?)
+    {
         this.mJMapInter = map
         mTvItemContext.text = mJMapInter?.value().toString()
     }
@@ -160,7 +169,8 @@ class JFormItemView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
     /**
      * 获取该控件上的数据
      */
-    fun getData(): JMapInter? {
+    fun getData(): JMapInter?
+    {
         return this.mJMapInter
     }
 

@@ -1,4 +1,4 @@
-package com.jzd.jutils.app.bean
+package com.jzd.jutils.app.common.bean
 
 import android.app.Activity
 import android.support.annotation.DrawableRes
