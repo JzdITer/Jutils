@@ -33,6 +33,14 @@ public class JLog {
             Log.e(TAG, msg);
         }
     }
+    /**
+     * 输出ERROR日志
+     */
+    public static void e(Throwable e) {
+        if(sDebug) {
+            Log.e(TAG, e.toString());
+        }
+    }
 
     /**
      * 输出INFO日志

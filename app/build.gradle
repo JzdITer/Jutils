@@ -11,7 +11,6 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -20,16 +19,16 @@ android {
         }
     }
     dokka {
-        moduleName = 'library'
+        moduleName = 'Jon'
         outputFormat = 'javadoc'
         outputDirectory = "$buildDir/javadoc"
 
-        skipEmptyPackages =  true  //不为空包创建索引页
+        skipEmptyPackages = true  //不为空包创建索引页
         //   ./gradlew dokka
     }
 
     task dokkaJavadoc(type: org.jetbrains.dokka.gradle.DokkaTask) {
-        moduleName = 'library'
+        moduleName = 'Jon'
         outputFormat = "javadoc"
         outputDirectory = "$buildDir/dokkaJavadoc"
     }
@@ -45,6 +44,7 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
     implementation 'com.android.support:design:27.1.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
 }
 repositories {
     mavenCentral()

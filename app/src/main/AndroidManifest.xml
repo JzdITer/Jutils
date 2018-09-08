@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.jzd.jutils.app">
 
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -17,10 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".module.widget.WidgetWatcherActivity"/>
-        <activity android:name=".module.util.ui.UtilsWatcherActivity">
+        <activity android:name=".module.permission.PermissionActivity">
         </activity>
-        <activity android:name="com.jzd.jutils.app.module.util.toast.ToastWatcherActivity">
+        <activity android:name=".module.rx.ui.RxMainActivity">
+        </activity>
+        <activity android:name=".module.recyclerview.ui.RecyclerViewActivity">
         </activity>
     </application>
 

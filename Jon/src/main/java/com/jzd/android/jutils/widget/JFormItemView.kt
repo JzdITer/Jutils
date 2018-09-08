@@ -9,7 +9,7 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.jzd.android.jutils.R
-import com.jzd.android.jutils.core.interf.JMapInter
+import com.jzd.android.jutils.core.impl.JMapImpl
 import com.jzd.android.jutils.utils.JMetrics
 import com.jzd.android.jutils.widget.utils.JWidgetUtil
 
@@ -33,7 +33,7 @@ class JFormItemView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
     lateinit var mTvItemRight: TextView
     lateinit var mDivider: View
 
-    private var mJMapInter: JMapInter? = null
+    private var mJMapImpl: JMapImpl? = null
 
     init
     {
@@ -160,18 +160,18 @@ class JFormItemView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
     /**
      * 为控件绑定数据
      */
-    fun setData(map: JMapInter?)
+    fun setData(map: JMapImpl?)
     {
-        this.mJMapInter = map
-        mTvItemContext.text = mJMapInter?.value().toString()
+        this.mJMapImpl = map
+        mTvItemContext.text = mJMapImpl?.value().toString()
     }
 
     /**
      * 获取该控件上的数据
      */
-    fun getData(): JMapInter?
+    fun getData(): JMapImpl?
     {
-        return this.mJMapInter
+        return this.mJMapImpl
     }
 
 }

@@ -10,8 +10,9 @@ import com.chad.library.adapter.base.BaseViewHolder
 import com.jzd.android.jutils.app.adapter.ModuleAdapter
 import com.jzd.jutils.app.R
 import com.jzd.jutils.app.common.bean.ModuleBean
-import com.jzd.jutils.app.module.util.ui.UtilsWatcherActivity
-import com.jzd.jutils.app.module.widget.WidgetWatcherActivity
+import com.jzd.jutils.app.module.permission.PermissionActivity
+import com.jzd.jutils.app.module.recyclerview.ui.RecyclerViewActivity
+import com.jzd.jutils.app.module.rx.ui.RxMainActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity()
@@ -43,10 +44,9 @@ class MainActivity : AppCompatActivity()
     private fun initData()
     {
         val data = arrayListOf<ModuleBean>()
-        data.add(ModuleBean("组件", WidgetWatcherActivity::class.java))
-
-        data.add(ModuleBean("工具类", UtilsWatcherActivity::class.java))
-
+        data.add(ModuleBean("权限管理", PermissionActivity::class.java))
+        data.add(ModuleBean("RxJava", RxMainActivity::class.java))
+        data.add(ModuleBean("RecyclerView", RecyclerViewActivity::class.java))
         mAdapter.setNewData(data)
     }
 }

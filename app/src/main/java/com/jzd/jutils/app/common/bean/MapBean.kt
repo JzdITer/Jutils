@@ -1,13 +1,21 @@
 package com.jzd.jutils.app.common.bean
 
-import com.jzd.android.jutils.core.bean.JMap
+import com.jzd.android.jutils.core.impl.JMapImpl
 
-data class MapBean(val key: String, val value: String) : JMap() {
-    override fun key(): Any {
+data class MapBean(val key: String, val value: String) : JMapImpl
+{
+    override fun key(): Any
+    {
         return key
     }
 
-    override fun value(): Any {
+    override fun value(): Any
+    {
         return value
+    }
+
+    override fun obj(): Any?
+    {
+        return this
     }
 }

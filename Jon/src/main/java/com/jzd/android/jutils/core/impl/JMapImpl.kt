@@ -1,4 +1,4 @@
-package com.jzd.android.jutils.core.interf
+package com.jzd.android.jutils.core.impl
 
 /**
  * 键值对,实现该接口,可快速转换Key-Value形式
@@ -7,7 +7,7 @@ package com.jzd.android.jutils.core.interf
  * @since  v1.0
  */
 
-interface JMapInter {
+interface JMapImpl {
     /**
      * 返回Key
      */

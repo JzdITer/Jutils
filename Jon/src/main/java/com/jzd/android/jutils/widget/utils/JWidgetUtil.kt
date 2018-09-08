@@ -1,6 +1,7 @@
 package com.jzd.android.jutils.widget.utils
 
 import android.content.Context
+import android.support.v7.widget.RecyclerView
 import android.widget.TextView
 
 /**
@@ -36,3 +37,28 @@ class JWidgetUtil(private val context: Context)
         return mTextView.currentHintTextColor
     }
 }
+
+/**
+ * 清除RecyclerView的ItemDecoration
+ */
+fun RecyclerView.clearItemDecoration()
+{
+    while (this.itemDecorationCount > 0)
+    {
+        this.removeItemDecorationAt(0)
+    }
+}
+
+/**
+ * 重新设置RecyclerView的ItemDecoration
+ */
+fun RecyclerView.setItemDecoration(itemDecoration: RecyclerView.ItemDecoration)
+{
+    if (this.itemDecorationCount > 0)
+    {
+        clearItemDecoration()
+    }
+    addItemDecoration(itemDecoration)
+}
+
+

@@ -1,6 +1,6 @@
 package com.jzd.android.jutils.core.bean
 
-import com.jzd.android.jutils.core.interf.JMapInter
+import com.jzd.android.jutils.core.impl.JMapImpl
 
 /**
  * JMapInter子类,可以不用实现obj()方法,在只使用Key-Value功能的情况下继承该类
@@ -8,9 +8,20 @@ import com.jzd.android.jutils.core.interf.JMapInter
  * @author jzd
  * @since  v1.0
  */
-abstract class JMap : JMapInter {
+class JMap(val key: String, val value: Any) : JMapImpl
+{
+    override fun key(): Any
+    {
+        return key
+    }
 
-    override fun obj(): Any? {
+    override fun value(): Any
+    {
+        return value
+    }
+
+    override fun obj(): Any?
+    {
         return this
     }
 }
