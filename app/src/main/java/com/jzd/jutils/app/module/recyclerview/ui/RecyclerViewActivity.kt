@@ -39,6 +39,8 @@ class RecyclerViewActivity : BaseActivity()
         mRvData.adapter = mAdapter
 
         registerForContextMenu(mIvMenu)
+
+        mIvMenu.setOnClickListener({ it.showContextMenu() })
     }
 
     override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?)

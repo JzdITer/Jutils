@@ -9,7 +9,7 @@ import android.widget.TextView
  * @author Jzd
  * @since 1.0
  */
-class JWidgetUtil(private val context: Context)
+class JWidgetUtil(context: Context)
 {
     private var mTextView: TextView = TextView(context)
 
