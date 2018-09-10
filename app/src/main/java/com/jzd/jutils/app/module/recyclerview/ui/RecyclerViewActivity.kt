@@ -57,7 +57,6 @@ class RecyclerViewActivity : BaseActivity()
             {
                 mRvData.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
                 mRvData.setItemDecoration(DividerItemDecoration(mRvData.context, DividerItemDecoration.HORIZONTAL))
-
             }
             R.id.id_menu_linear_layout_v ->
             {
