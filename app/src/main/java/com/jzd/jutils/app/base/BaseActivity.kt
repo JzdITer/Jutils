@@ -1,6 +1,7 @@
 package com.jzd.jutils.app.base
 
-import com.jzd.android.jutils.core.ui.JBaseActivity
+import com.jzd.android.jon.core.ui.JBaseActivity
+
 
 open class BaseActivity : JBaseActivity()
 {

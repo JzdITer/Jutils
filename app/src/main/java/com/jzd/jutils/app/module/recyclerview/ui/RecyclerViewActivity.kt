@@ -8,10 +8,10 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.ContextMenu
 import android.view.MenuItem
 import android.view.View
-import com.jzd.android.jutils.core.impl.JMapImpl
-import com.jzd.android.jutils.core.impl.toJMap
-import com.jzd.android.jutils.widget.utils.clearItemDecoration
-import com.jzd.android.jutils.widget.utils.setItemDecoration
+import com.jzd.android.jon.core.impl.JMapImpl
+import com.jzd.android.jon.core.impl.toJMap
+import com.jzd.android.jon.widget.utils.clearItemDecoration
+import com.jzd.android.jon.widget.utils.setItemDecoration
 import com.jzd.jutils.app.R
 import com.jzd.jutils.app.base.BaseActivity
 import com.jzd.jutils.app.module.recyclerview.adapter.RecyclerViewAdapter

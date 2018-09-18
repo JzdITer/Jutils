@@ -1,4 +1,4 @@
-package com.jzd.android.jutils.widget.utils
+package com.jzd.android.jon.widget.utils
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView

@@ -1,4 +1,4 @@
-package com.jzd.android.jutils.utils
+package com.jzd.android.jon.utils
 
 import android.content.Context
 

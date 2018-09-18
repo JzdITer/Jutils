@@ -1,6 +1,6 @@
 package com.jzd.jutils.app.common.bean
 
-import com.jzd.android.jutils.core.impl.JMapImpl
+import com.jzd.android.jon.core.impl.JMapImpl
 
 data class MapBean(val key: String, val value: String) : JMapImpl
 {

@@ -1,4 +1,4 @@
-package com.jzd.android.jutils.app.adapter
+package com.jzd.android.jon.app.adapter
 
 import android.widget.TextView
 import com.chad.library.adapter.base.BaseQuickAdapter

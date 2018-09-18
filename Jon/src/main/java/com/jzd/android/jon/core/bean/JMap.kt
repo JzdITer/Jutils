@@ -1,6 +1,6 @@
-package com.jzd.android.jutils.core.bean
+package com.jzd.android.jon.core.bean
 
-import com.jzd.android.jutils.core.impl.JMapImpl
+import com.jzd.android.jon.core.impl.JMapImpl
 
 /**
  * JMapInter子类,可以不用实现obj()方法,在只使用Key-Value功能的情况下继承该类

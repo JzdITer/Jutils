@@ -1,4 +1,4 @@
-package com.jzd.android.jutils.utils
+package com.jzd.android.jon.utils
 
 /**
  * 检查
@@ -23,5 +23,13 @@ class JChecker
                 || ub === Character.UnicodeBlock.GENERAL_PUNCTUATION
                 || ub === Character.UnicodeBlock.CJK_SYMBOLS_AND_PUNCTUATION
                 || ub === Character.UnicodeBlock.HALFWIDTH_AND_FULLWIDTH_FORMS)
+    }
+
+    /**
+     * 是否是手机号
+     */
+    fun isPhone(phone: String?): Boolean
+    {
+        return !phone.isNullOrEmpty() && phone!!.matches("^1[34578][0-9]\\d{8}$".toRegex());
     }
 }

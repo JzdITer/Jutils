@@ -2,7 +2,7 @@ package com.jzd.jutils.app.module.rx.ui
 
 import android.os.Bundle
 import android.view.View
-import com.jzd.android.jutils.utils.JLog
+import com.jzd.android.jon.utils.JLog
 import com.jzd.jutils.app.R
 import com.jzd.jutils.app.base.BaseActivity
 import io.reactivex.Observable

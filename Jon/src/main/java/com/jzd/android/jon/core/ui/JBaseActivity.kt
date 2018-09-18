@@ -1,28 +1,26 @@
-package com.jzd.android.jutils.core.ui
+package com.jzd.android.jon.core.ui
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.view.LayoutInflater
+import android.support.v7.app.AppCompatActivity
 import android.view.View
-import android.view.ViewGroup
 
 /**
- * Fragment父类 封装系统级Api
+ * Activity父类 封装系统Api
  * @author Jzd
  * @since 1.0
  */
-open class JBaseFragment : Fragment(), View.OnClickListener
+open class JBaseActivity : AppCompatActivity(), View.OnClickListener
 {
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
+    override fun setContentView(layoutResID: Int)
     {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        super.setContentView(layoutResID)
     }
-    
+
 
     /**
      * 默认实现View.OnClickListener接口，根据需要重写
@@ -41,4 +39,5 @@ open class JBaseFragment : Fragment(), View.OnClickListener
             it.setOnClickListener(this)
         }
     }
+
 }

@@ -7,9 +7,11 @@ import android.support.v7.widget.GridLayoutManager
 import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
-import com.jzd.android.jutils.app.adapter.ModuleAdapter
+import com.jzd.android.jon.app.adapter.ModuleAdapter
 import com.jzd.jutils.app.R
 import com.jzd.jutils.app.common.bean.ModuleBean
+import com.jzd.jutils.app.module.loader.ui.JLoaderActivity
+import com.jzd.jutils.app.module.notification.ui.NotificationWatchActivity
 import com.jzd.jutils.app.module.permission.PermissionActivity
 import com.jzd.jutils.app.module.recyclerview.ui.RecyclerViewActivity
 import com.jzd.jutils.app.module.rx.ui.RxMainActivity
@@ -23,6 +25,8 @@ class MainActivity : AppCompatActivity()
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
+
+
         setContentView(R.layout.activity_main)
 
         mRvTest.layoutManager = mLayoutManager
@@ -38,7 +42,6 @@ class MainActivity : AppCompatActivity()
             }
         })
 
-
     }
 
     private fun initData()
@@ -47,6 +50,8 @@ class MainActivity : AppCompatActivity()
         data.add(ModuleBean("权限管理", PermissionActivity::class.java))
         data.add(ModuleBean("RxJava", RxMainActivity::class.java))
         data.add(ModuleBean("RecyclerView", RecyclerViewActivity::class.java))
+        data.add(ModuleBean("JLoader", JLoaderActivity::class.java))
+        data.add(ModuleBean("Notification", NotificationWatchActivity::class.java))
         mAdapter.setNewData(data)
     }
 }

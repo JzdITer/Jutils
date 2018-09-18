@@ -1,4 +1,4 @@
-package com.jzd.android.jutils.widget
+package com.jzd.android.jon.widget
 
 import android.content.Context
 import android.graphics.Color
@@ -8,10 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.jzd.android.jutils.R
-import com.jzd.android.jutils.core.impl.JMapImpl
-import com.jzd.android.jutils.utils.JMetrics
-import com.jzd.android.jutils.widget.utils.JWidgetUtil
+import com.jzd.android.jon.R
+import com.jzd.android.jon.core.impl.JMapImpl
+import com.jzd.android.jon.utils.JMetrics
+import com.jzd.android.jon.widget.utils.JWidgetUtil
 
 /**
  * 表单输入控件，包含左侧TextView,内容TextView,右侧TextView和分割线
